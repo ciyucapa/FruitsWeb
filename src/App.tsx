@@ -1,7 +1,9 @@
 import './App.css'
-import ListOfFruitCards from './components/ListOfFruitCards'
+import ListOfFruitCards from './components/ListOfFruitCards';
+import useFetchFruits from './hooks/useFetchFruits';
 
 function App() {
+  const {fruits} = useFetchFruits();
 
   return (
     <>
@@ -9,7 +11,7 @@ function App() {
       <p className="read-the-docs">
         the most wonderful fruits
       </p>
-      <ListOfFruitCards/>
+      <ListOfFruitCards fruits={fruits} />
     </>
   )
 }
