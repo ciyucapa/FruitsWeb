@@ -51,10 +51,10 @@ Abre http://localhost:5173 en tu navegador.
 
 ## Test
 
-  # Correr todos los tests
+  #### Correr todos los tests
   npm run test
 
-  # Correr un test específico
+  #### Correr un test específico
   npm run test -- src/components/FilterAndSortedFruits/FilterAndSortedFruits.test.tsx
 
 ---
