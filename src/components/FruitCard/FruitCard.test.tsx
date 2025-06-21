@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import FruitCard from './index';
 import type { Fruit } from '../../utils/interfaces';
+import '@testing-library/jest-dom';
 
 jest.mock('../../hooks/useTakeImage', () => () => ({
   imgSrc: 'https://example.com/image.jpg',
