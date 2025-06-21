@@ -40,8 +40,8 @@ const FilterAndSortedFruits: React.FC<Props> = ({
         onChange={(e) => onFilterValueChange(e.target.value)}
       />
 
-      <button className="btn btn-outline-secondary" onClick={onToggleSortOrder}>
-        Order: {sortOrder === 'asc' ? 'A - Z' : 'Z - A'}
+      <button className="btn btn-outline-secondary custom-order-btn" onClick={onToggleSortOrder}>
+        Order {sortOrder === 'asc' ? 'A - Z' : 'Z - A'}
       </button>
     </div>
   );

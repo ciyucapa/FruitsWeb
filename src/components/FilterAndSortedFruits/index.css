@@ -2,3 +2,26 @@
   padding-top: 60px;
   padding-bottom: 32px;
 }
+
+.custom-order-btn {
+  width: 134px;
+  height: 38px;
+  padding: 13px 0px;
+  border-radius: 50px;
+  border: 1px solid #252525;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: bottom;
+  color: #000000;
+}
+
+.custom-order-btn:hover,
+.custom-order-btn:focus {
+  border-color: #000000;
+}

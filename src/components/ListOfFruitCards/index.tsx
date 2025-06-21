@@ -3,11 +3,10 @@ import FilterAndSortedFruits from '../FilterAndSortedFruits';
 import useFilteredFruits from '../../hooks/useFilterFruits';
 import TotalNutritionTable from '../TotalNutritionTable';
 
-import type { FruistProps } from '../../utils/interfaces';
-
+import type { FruitsProps } from '../../utils/interfaces';
 import './index.css';
 
-const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
+const ListOfFruitCards: React.FC<FruitsProps> = ({ fruits }) => {
   const {
     filterType,
     setFilterType,
@@ -18,6 +17,7 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
     visibleFruits,
     totalNutrition,
     canSeeMore,
+    hasResults,
     handleSeeMore,
   } = useFilteredFruits(fruits);
 
@@ -35,6 +35,13 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
               setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'))
             }
           />
+
+          {!hasResults && (
+            <div className="alert alert-warning mt-4" role="alert">
+              No fruits found under <strong>{filterType}</strong> matching "<em>{filterValue}</em>". Try another keyword.
+            </div>
+          )}
+
           <div className="row">
             {visibleFruits.map((fruit) => (
               <div
@@ -45,7 +52,8 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
               </div>
             ))}
           </div>
-          {canSeeMore && (
+
+          {canSeeMore && hasResults && (
             <div className="text-center mt-3">
               <button className="btn btn-primary btn-see-more" onClick={handleSeeMore}>
                 See more
@@ -53,6 +61,7 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
             </div>
           )}
         </div>
+
         <div className="col-lg-3 d-none d-lg-block ps-lg-4">
           <TotalNutritionTable
             total={totalNutrition}
