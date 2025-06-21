@@ -47,7 +47,7 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
           </div>
           {canSeeMore && (
             <div className="text-center mt-3">
-              <button className="btn btn-primary" onClick={handleSeeMore}>
+              <button className="btn btn-primary btn-see-more" onClick={handleSeeMore}>
                 See more
               </button>
             </div>

@@ -23,8 +23,17 @@
   box-sizing: border-box;
 }
 
+.btn-see-more {
+  width: 132;
+  height: 47;
+  border-radius: 50px;
+  background: #0F0A0F;
+  color: #FFFFFF;
+  padding: 13px 32px;
+}
+
 @media (min-width: 1400px) {
   .cardInformation {
-    width: 80%; 
+    width: 80%;
   }
 }
