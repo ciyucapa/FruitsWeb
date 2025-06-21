@@ -62,7 +62,7 @@ const ListOfFruitCards: React.FC<FruitsProps> = ({ fruits }) => {
           )}
         </div>
 
-        <div className="col-lg-3 d-none d-lg-block ps-lg-4">
+        <div className="col-12 col-lg-3 mt-4 mt-lg-0 ps-lg-4">
           <TotalNutritionTable
             total={totalNutrition}
             count={visibleFruits.length}
