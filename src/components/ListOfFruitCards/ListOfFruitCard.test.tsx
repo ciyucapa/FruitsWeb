@@ -19,7 +19,7 @@ jest.mock('../FilterAndSortedFruits', () => ({
 // 🔁 Mock del componente TotalNutritionTable
 jest.mock('../TotalNutritionTable', () => ({
   __esModule: true,
-  default: ({ total, count }: { total: any; count: number }) => (
+  default: ({ count }: { total: any; count: number }) => (
     <div data-testid="nutrition-table">Nutrition Table - {count}</div>
   ),
 }));
