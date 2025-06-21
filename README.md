@@ -1,32 +1,34 @@
-# Season Fruits – Landing Page ReactJS
+# 🍓 Season Fruits – Landing Page ReactJS
 Landing page en React + Vite que consume la API Fruityvice para mostrar frutas de temporada.
 
 ![Vista previa](./public/assets/vistaPrevia.png)
 
 ---
 
-## Prerequisitos
-
-- **Node.js** v10.9.2 
+## 📌 Prerequisitos
+ 
+- **Node.js** `v10.9.2`  
+- **npm** `10.9.2`  
 
 > Estas versiones fueron usadas para desarrollar y testear el proyecto. 
 ---
 
-## Tecnologías
+## ⚙️ Tecnologías usadas
 
-- **React 18** + **Vite**  
-- **TypeScript**  
-- **Hooks personalizados:**  
-  - `useFetchFruits` (consumo API)  
-  - `useFilteredFruits` (filtrado/orden)  
-  - `useTakeImage` (fallback de extensiones)  
-  - `useLikedFruits` (persistencia “me gusta” en localStorage)  
-- **Estilos:** Bootstrap 5 + CSS  
-- **Tests:** Jest + @testing-library/react + ts-jest
+- **ReactJS 18**
+- **Vite**
+- **TypeScript**
+- **Bootstrap 5 + CSS personalizado**
+- **Jest + React Testing Library** para pruebas
+- **Hooks personalizados:**
+  - `useFetchFruits` → consume la API
+  - `useFilteredFruits` → filtra y ordena
+  - `useLikedFruits` → persiste likes en localStorage
+  - `useTakeImage` → selecciona imagen o fallback
 
 ---
 
-## Instalación ¡rápida!
+## 🚀 Instalación ¡rápida!
 
 ```bash
 git clone https://github.com/ciyucapa/FruitsWeb.git
@@ -38,18 +40,20 @@ Abre http://localhost:5173 en tu navegador.
 ```
 ---
 
-## Usos
+## ✅ Funcionalidades implementadas
 
-  1. Filtrar por Family / Order / Genus
-  2. Buscar texto dentro de la categoría seleccionada
-  3. Order A-Z / Z-A con un clic
-  4. See more: carga 4 frutas más cada vez
-  5. Me gusta: persiste en localStorage
-  6. General Information: totales nutricionales de lo visible
+  1. Consumo de API pública Fruityvice
+  2. Imágenes locales dinámicas /Si no existe imagen: muestra not-available.webp/
+  3. Tarjetas de producto con: Imagen, nombre, info nutricional, Botón de “❤️ me gusta” persistente
+  4. Filtrado por Family / Order / Genus
+  5. Ordenamiento A-Z y Z-A
+  6. Cargar más frutas con "See more"
+  7. Resumen nutricional dinámico
+  8. 100% responsive (móvil, tablet, escritorio)
 
 ---
 
-## Test
+## 🧪 Test
 
   #### Correr todos los tests
   npm run test
@@ -59,7 +63,28 @@ Abre http://localhost:5173 en tu navegador.
 
 ---
 
-## Configuración de Proxy CORS (Solo para Desarrollo)
+## 📂 Recursos proporcionados
+
+  Durante el desarrollo de esta prueba técnica se utilizaron los siguientes recursos:
+
+  🔗 API pública Fruityvice
+  https://www.fruityvice.com/
+
+  🎨 Diseño en Figma
+  [Ver diseño](https://www.figma.com/design/ZwJgBcWBWre00mjaMwfVQd/Prueba-t%C3%A9cnica?node-id=1-64&t=spCo2oBGvumU7J4r-0)
+
+  🖼️ Carpeta de imágenes y diseño de respaldo (Google Drive)
+  [Acceder a la carpeta](https://drive.google.com/drive/folders/1SyuYFHV7WtQk_1JyjJ7GF0YFVxYey8GM)
+
+---
+
+## 📝 Licencia
+
+  ##### MIT © Cindy Cáceres
+
+---
+
+##  🛠 Configuración de Proxy CORS (Solo para Desarrollo)
 
 La API de Fruityvice puede bloquear solicitudes directas desde `localhost` debido a restricciones de CORS. Para solventarlo durante el desarrollo, puedes usar el proxy de CORS Anywhere:
 
