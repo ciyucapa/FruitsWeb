@@ -1,0 +1,39 @@
+.containerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.listCard {
+  max-width: 1011px;
+  flex: 1 1 65%;
+}
+
+.cardInformation {
+  flex: 1 1 30%;
+  min-width: 280px;
+  max-width: 400px;
+  border-radius: 15px;
+  background-color: #F9F9F9;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.btn-see-more {
+  width: 132;
+  height: 47;
+  border-radius: 50px;
+  background: #0F0A0F;
+  color: #FFFFFF;
+  padding: 13px 32px;
+}
+
+@media (min-width: 1400px) {
+  .cardInformation {
+    width: 80%;
+  }
+}

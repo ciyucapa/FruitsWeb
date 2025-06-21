@@ -1,0 +1,74 @@
+.filter-bar {
+  padding-top: 60px;
+  padding-bottom: 32px;
+}
+
+.custom-order-btn {
+  width: 134px;
+  height: 38px;
+  padding: 13px 0px;
+  border-radius: 50px;
+  border: 1px solid #252525;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: bottom;
+  color: #000000;
+}
+
+.input-rounded {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 165px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 100px;
+  border: 1px solid #252525;
+  background-color: white;
+}
+
+.input-rounded input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.input-rounded input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.input-rounded .input-group-text {
+  background: transparent;
+  padding: 0;
+}
+
+.select-rounded {
+  width: 165px;
+  height: 38px;
+  padding: 4px 15px;
+  border-radius: 40px;
+  border: 1px solid #535353;
+  background-color: white;
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+.custom-order-btn:hover,
+.custom-order-btn:focus,
+.input-rounded:hover,
+.input-rounded:focus,
+.select-rounded:hover,
+.select-rounded:focus {
+  border-color: #000000;
+  outline: none;
+}
+

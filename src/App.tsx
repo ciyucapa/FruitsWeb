@@ -1,31 +1,18 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ListOfFruitCards from './components/ListOfFruitCards';
+import useFetchFruits from './hooks/useFetchFruits';
 
 function App() {
+  const {fruits} = useFetchFruits();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button >
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="container-fluid containerFruits">
+      <h1 className='titleCard'>Season Fruits</h1>
+      <p className="textCard">
+        the most wonderful fruits
       </p>
-    </>
+      <ListOfFruitCards fruits={fruits} />
+    </div>
   )
 }
 

@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Season Fruits – Landing Page ReactJS
+Landing page en React + Vite que consume la API Fruityvice para mostrar frutas de temporada.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vista previa](./public/assets/vistaPrevia.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisitos
 
-## Expanding the ESLint configuration
+- **Node.js** v10.9.2 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> Estas versiones fueron usadas para desarrollar y testear el proyecto. 
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tecnologías
+
+- **React 18** + **Vite**  
+- **TypeScript**  
+- **Hooks personalizados:**  
+  - `useFetchFruits` (consumo API)  
+  - `useFilteredFruits` (filtrado/orden)  
+  - `useTakeImage` (fallback de extensiones)  
+  - `useLikedFruits` (persistencia “me gusta” en localStorage)  
+- **Estilos:** Bootstrap 5 + CSS  
+- **Tests:** Jest + @testing-library/react + ts-jest
+
+---
+
+## Instalación ¡rápida!
+
+```bash
+git clone https://github.com/ciyucapa/FruitsWeb.git
+cd FruitsWeb
+npm install
+npm run dev
+
+Abre http://localhost:5173 en tu navegador.
 ```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  1. Filtrar por Family / Order / Genus
+  2. Buscar texto dentro de la categoría seleccionada
+  3. Order A-Z / Z-A con un clic
+  4. See more: carga 4 frutas más cada vez
+  5. Me gusta: persiste en localStorage
+  6. General Information: totales nutricionales de lo visible
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## Test
+
+  #### Correr todos los tests
+  npm run test
+
+  #### Correr un test específico
+  npm run test -- src/components/FilterAndSortedFruits/FilterAndSortedFruits.test.tsx
+
+---
+
+## Configuración de Proxy CORS (Solo para Desarrollo)
+
+La API de Fruityvice puede bloquear solicitudes directas desde `localhost` debido a restricciones de CORS. Para solventarlo durante el desarrollo, puedes usar el proxy de CORS Anywhere:
+
+1. Abre en tu navegador: https://cors-anywhere.herokuapp.com/corsdemo  
+2. Haz clic en **“Request temporary access to the demo server”**.  
+3. En tu hook de la API (`useFetchFruits.tsx`), ajusta la URL así:
+
+   ```ts
+   const API_URL =
+     'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all';
+  ```
+
+4. Reinicia el servidor de desarrollo:
+  ```
+    npm run dev
+  ```
+5. Refresca tu aplicación en http://localhost:5173. Las llamadas a la API ya deberían funcionar.
+Nota: Este proxy es solo para desarrollo local. Para producción, configura tu propio proxy o llama directamente a la API si CORS lo permite.
+
+---
+
