@@ -1,0 +1,35 @@
+/* Contenedor principal con espaciado entre tarjetas y panel lateral */
+.containerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  background-color: red; /* Solo para pruebas visuales */
+  padding: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Contenedor de tarjetas */
+.listCard {
+  max-width: 1011px;
+  flex: 1 1 65%;
+}
+
+/* Panel lateral */
+.cardInformation {
+  flex: 1 1 30%;
+  min-width: 280px;
+  max-width: 400px;
+  border-radius: 15px;
+  background-color: #F9F9F9;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Media query para pantallas ≥1400px */
+@media (min-width: 1400px) {
+  .cardInformation {
+    width: 80%; /* puedes ajustar según necesidad */
+  }
+}

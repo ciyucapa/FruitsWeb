@@ -6,13 +6,13 @@ function App() {
   const {fruits} = useFetchFruits();
 
   return (
-    <>
+    <div className="container-fluid containerFruits">
       <h1>Season Fruits</h1>
       <p className="read-the-docs">
         the most wonderful fruits
       </p>
       <ListOfFruitCards fruits={fruits} />
-    </>
+    </div>
   )
 }
 

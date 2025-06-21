@@ -1,24 +1,30 @@
 .fruit-card {
-    width: 317px;
-    height: 563px;
-    padding: 0px;
-    border-radius: 10px;
+  width: 317px;
+  height: 563px;
+  padding: 0;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
 }
 
+/* Tipografía personalizada */
 .text-gold-24 {
-    font-size: 24px;
-    color: #D7B46B;
-    margin-bottom: 8px;
+  font-size: 24px;
+  color: #D7B46B;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .text-gold-18 {
-    font-size: 18px;
-    color: #D7B46B;
-    margin-bottom: 8px;
+  font-size: 18px;
+  color: #D7B46B;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .text-gold-16 {
-    font-size: 16px;
-    color: #2C2C2C;
-    margin-bottom: 8px;
+  font-size: 16px;
+  color: #2C2C2C;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
