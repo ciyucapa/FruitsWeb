@@ -52,3 +52,27 @@ export default tseslint.config({
   },
 })
 ```
+## CORS Proxy Configuration (Development Only)
+
+The Fruityvice API may block direct requests from `localhost` due to CORS restrictions. To work around this during development, you can use the CORS Anywhere proxy:
+
+1. Open in your browser: https://cors-anywhere.herokuapp.com/corsdemo  
+2. Click **“Request temporary access to the demo server”**.  
+3. In your API hook (`useFetchFruits.tsx`), set the URL to:
+
+   ```ts
+   const API_URL =
+     'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all';
+  ```
+
+4. Restart the development server:
+```ts
+npm run dev
+# or
+yarn dev
+```
+5. Refresh your application at http://localhost:5173. API calls should now succeed.
+
+Note: This proxy is for local development only. For production, configure your own proxy or call the API directly if CORS is permitted.
+
+
