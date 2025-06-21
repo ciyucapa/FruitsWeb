@@ -20,7 +20,6 @@ const FruitCard: React.FC<FruitCardProps> = ({ fruit }) => {
       <div className="card-body p-4 text-start">
         <h5 className="card-title text-gold-24">{fruit.name}</h5>
 
-        {/* Family / Order / Genus */}
         <div className="d-flex justify-content-between mb-3">
           <div>
             <p className='text-gold-16 fw-bold'>Family:</p>
@@ -36,7 +35,6 @@ const FruitCard: React.FC<FruitCardProps> = ({ fruit }) => {
           </div>
         </div>
 
-        {/* Nutrition Info */}
         <p className="text-gold-18 fw-bold">Nutritions</p>
         <div className="d-flex justify-content-between">
           <p className="text-gold-16 fw-bold">Calories:</p>

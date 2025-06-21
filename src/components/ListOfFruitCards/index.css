@@ -30,6 +30,6 @@
 /* Media query para pantallas ≥1400px */
 @media (min-width: 1400px) {
   .cardInformation {
-    width: 80%; /* puedes ajustar según necesidad */
+    width: 80%; 
   }
 }
