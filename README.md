@@ -1,78 +1,40 @@
-# React + TypeScript + Vite
+# Season Fruits – Landing Page ReactJS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prerequisitos
 
-Currently, two official plugins are available:
+- **Node.js** v10.9.2 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Estas versiones fueron usadas para desarrollar y testear el proyecto. 
+---
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+git clone https://github.com/ciyucapa/FruitsWeb
+cd FruitsWeb
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# usar npm:
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Configuración de Proxy CORS (Solo para Desarrollo)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+La API de Fruityvice puede bloquear solicitudes directas desde `localhost` debido a restricciones de CORS. Para solventarlo durante el desarrollo, puedes usar el proxy de CORS Anywhere:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-## CORS Proxy Configuration (Development Only)
-
-The Fruityvice API may block direct requests from `localhost` due to CORS restrictions. To work around this during development, you can use the CORS Anywhere proxy:
-
-1. Open in your browser: https://cors-anywhere.herokuapp.com/corsdemo  
-2. Click **“Request temporary access to the demo server”**.  
-3. In your API hook (`useFetchFruits.tsx`), set the URL to:
+1. Abre en tu navegador: https://cors-anywhere.herokuapp.com/corsdemo  
+2. Haz clic en **“Request temporary access to the demo server”**.  
+3. En tu hook de la API (`useFetchFruits.tsx`), ajusta la URL así:
 
    ```ts
    const API_URL =
      'https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all';
   ```
 
-4. Restart the development server:
-```ts
-npm run dev
-# or
-yarn dev
-```
-5. Refresh your application at http://localhost:5173. API calls should now succeed.
-
-Note: This proxy is for local development only. For production, configure your own proxy or call the API directly if CORS is permitted.
-
+4. Reinicia el servidor de desarrollo:
+  ```
+    npm run dev
+  ```
+5. Refresca tu aplicación en http://localhost:5173. Las llamadas a la API ya deberían funcionar.
+Nota: Este proxy es solo para desarrollo local. Para producción, configura tu propio proxy o llama directamente a la API si CORS lo permite.
 
