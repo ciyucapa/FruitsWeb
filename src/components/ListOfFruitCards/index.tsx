@@ -1,30 +1,51 @@
-import { useState } from 'react';
 import FruitCard from '../FruitCard';
+import FilterAndSortedFruits from '../FilterAndSortedFruits';
+import useFilteredFruits from '../../hooks/useFilterFruits';
+import TotalNutritionTable from '../TotalNutritionTable';
+
 import type { FruistProps } from '../../utils/interfaces';
-import './index.css'; 
+
+import './index.css';
 
 const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
-  const [visibleCount, setVisibleCount] = useState(9);
-
-  const handleSeeMore = () => {
-    setVisibleCount((prev) => prev + 3); 
-  };
-
-  const visibleFruits = fruits.slice(0, visibleCount);
+  const {
+    filterType,
+    setFilterType,
+    filterValue,
+    setFilterValue,
+    sortOrder,
+    setSortOrder,
+    visibleFruits,
+    totalNutrition,
+    canSeeMore,
+    handleSeeMore,
+  } = useFilteredFruits(fruits);
 
   return (
-    <div className="container-xxl py-4">
+    <div className="container-xxl">
       <div className="row">
         <div className="col-lg-9">
+          <FilterAndSortedFruits
+            filterType={filterType}
+            filterValue={filterValue}
+            sortOrder={sortOrder}
+            onFilterTypeChange={setFilterType}
+            onFilterValueChange={setFilterValue}
+            onToggleSortOrder={() =>
+              setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'))
+            }
+          />
           <div className="row">
             {visibleFruits.map((fruit) => (
-              <div key={fruit.id} className="col-12 col-sm-6 col-md-4 mb-4 d-flex justify-content-center">
+              <div
+                key={fruit.id}
+                className="col-12 col-sm-6 col-md-4 mb-4 d-flex justify-content-center"
+              >
                 <FruitCard fruit={fruit} />
               </div>
             ))}
           </div>
-
-          {visibleCount < fruits.length && (
+          {canSeeMore && (
             <div className="text-center mt-3">
               <button className="btn btn-primary" onClick={handleSeeMore}>
                 See more
@@ -32,12 +53,11 @@ const ListOfFruitCards: React.FC<FruistProps> = ({ fruits }) => {
             </div>
           )}
         </div>
-
         <div className="col-lg-3 d-none d-lg-block ps-lg-4">
-          <div className="card p-3 shadow-sm" style={{ height: '100%' }}>
-            <h5 className="mb-3 text-gold-24">General Information</h5>
-            <p className="text-gold-16">Select a fruit to view details. You can also compare nutritional values here.</p>
-          </div>
+          <TotalNutritionTable
+            total={totalNutrition}
+            count={visibleFruits.length}
+          />
         </div>
       </div>
     </div>

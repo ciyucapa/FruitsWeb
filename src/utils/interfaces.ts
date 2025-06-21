@@ -22,3 +22,11 @@ export type FruitCardProps = {
   imgSrc: string;
   handleImageError: any
 };
+
+export type Nutrition = {
+  calories: number;
+  fat: number;
+  sugar: number;
+  carbohydrates: number;
+  protein: number;
+};

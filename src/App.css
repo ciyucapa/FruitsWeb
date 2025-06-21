@@ -6,10 +6,28 @@
 
 .containerFruits {
   padding: 0px;
+  padding-top: 82px;
 }
 
-.read-the-docs {
-  color: #888;
+.textCard {
+  color: #D7B46B;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
+.titleCard {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000000;
+  margin-bottom: 0px;
 }
 
 @media (min-width: 1400px) {

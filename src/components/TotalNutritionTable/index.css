@@ -1,0 +1,26 @@
+.text-black-16-2 {
+    font-size: 16px;
+    color: #2C2C2C;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.text-gold-24-2 {
+    font-size: 24px;
+    color: #D7B46B;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.text-gold-16-2 {
+    font-size: 16px;
+    color: #D7B46B;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.text-black-16-p {
+    font-size: 16px;
+    color: #2C2C2C;
+    margin-bottom: 16px;
+}

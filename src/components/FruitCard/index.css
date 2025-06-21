@@ -27,3 +27,31 @@
   margin-bottom: 8px;
   font-weight: 400;
 }
+
+.widthImage {
+  height: 235px;
+}
+
+.btn-like {
+  width: 30px;
+  height: 30px;
+  background-color: #D7B46B;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  padding: 0;
+  z-index: 10;
+}
+
+.btn-like:hover {
+  transform: scale(1.1);
+}
+
+
+

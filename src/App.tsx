@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div className="container-fluid containerFruits">
-      <h1>Season Fruits</h1>
-      <p className="read-the-docs">
+      <h1 className='titleCard'>Season Fruits</h1>
+      <p className="textCard">
         the most wonderful fruits
       </p>
       <ListOfFruitCards fruits={fruits} />

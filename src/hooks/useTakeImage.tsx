@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useTakeImage = (imageBase: string) => {
+const useTakeImage = (imageBase: string) => {
   const extensions = ['.webp', '.jpg', '.png', '.avif'];
   const [extIndex, setExtIndex] = useState(0);
 
@@ -22,3 +22,5 @@ export const useTakeImage = (imageBase: string) => {
     handleImageError,
   };
 };
+
+export default useTakeImage;
