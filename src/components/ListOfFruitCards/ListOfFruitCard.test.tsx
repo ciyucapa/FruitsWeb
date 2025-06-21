@@ -4,19 +4,16 @@ import type { Fruit } from '../../utils/interfaces';
 import * as useFilteredHook from '../../hooks/useFilterFruits';
 import '@testing-library/jest-dom';
 
-// 🔁 Mock del componente FruitCard (si deseas evitar dependencias reales)
 jest.mock('../FruitCard', () => ({
   __esModule: true,
   default: ({ fruit }: { fruit: Fruit }) => <div data-testid="fruit-card">{fruit.name}</div>,
 }));
 
-// 🔁 Mock del componente FilterAndSortedFruits
 jest.mock('../FilterAndSortedFruits', () => ({
   __esModule: true,
   default: () => <div data-testid="filter-bar">FilterBar</div>,
 }));
 
-// 🔁 Mock del componente TotalNutritionTable
 jest.mock('../TotalNutritionTable', () => ({
   __esModule: true,
   default: ({ count }: { total: any; count: number }) => (
@@ -43,7 +40,7 @@ describe('ListOfFruitCards', () => {
   ];
 
   beforeEach(() => {
-    // 👇 Mockea el hook useFilteredFruits con comportamiento controlado
+
     jest.spyOn(useFilteredHook, 'default').mockReturnValue({
       filterType: 'family',
       setFilterType: jest.fn(),
@@ -68,16 +65,12 @@ describe('ListOfFruitCards', () => {
   it('renders filter bar and fruit cards', () => {
     render(<ListOfFruitCards fruits={mockFruits} />);
 
-    // Verifica que se renderice el filtro
     expect(screen.getByTestId('filter-bar')).toBeInTheDocument();
 
-    // Verifica que se renderice el componente FruitCard
     expect(screen.getByTestId('fruit-card')).toHaveTextContent('Apple');
 
-    // Verifica que se renderice el botón See More
     expect(screen.getByRole('button', { name: /see more/i })).toBeInTheDocument();
 
-    // Verifica que se renderice la tabla nutricional
     expect(screen.getByTestId('nutrition-table')).toBeInTheDocument();
   });
 

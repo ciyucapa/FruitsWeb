@@ -1,4 +1,3 @@
-// src/hooks/__tests__/useLikedFruits.test.ts
 import { renderHook, act } from '@testing-library/react';
 import useLikedFruits from './useLikedFruits';
 
